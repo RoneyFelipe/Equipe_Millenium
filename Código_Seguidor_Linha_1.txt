@@ -1,0 +1,127 @@
+booleano executarPercurso = verdadeiro
+numero sensorLuz1 = 1
+texto sensorLuzLer1 = ""
+numero sensorLuz2 = 1
+texto sensorLuzLer2 = ""
+numero sensorLuz3 = 1
+texto sensorLuzLer3 = ""
+numero sensorLuz4 = 1
+texto sensorLuzLer4 = ""
+numero sensorLuz5 = 1
+texto sensorLuzLer5 = ""
+texto sensorCor2 = ""
+texto sensorCor4 = ""
+
+inicio 
+	enquanto (executarPercurso == verdadeiro) farei {
+		sensorCor2 = cor(2)
+		sensorCor2 = cor(4)
+		sensorLuz1 = luz(1)
+		sensorLuz2 = luz(2)
+		sensorLuz3 = luz(3)
+		sensorLuz4 = luz(4)
+		sensorLuz5 = luz(5)
+		sensorLuzLer1 = virartexto(sensorLuz1)
+		sensorLuzLer2 = virartexto(sensorLuz2)
+		sensorLuzLer3 = virartexto(sensorLuz3)
+		sensorLuzLer4 = virartexto(sensorLuz4)
+		sensorLuzLer5 = virartexto(sensorLuz5)
+		escrever(1, sensorLuzLer2)
+		escrever(2, sensorLuzLer4)
+		se (sensorCor2 == "VERDE") entao {
+			se (sensorCor4 == "VERDE") entao {
+				frente(100)
+				rotacionar(80,180)
+			}
+			senao {
+				repita 4 vezes {
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+				}
+				repita 4 vezes {
+					tras(80)
+					esperar(100)
+				}
+				rotacionar(120,negativo(90))
+				repita 8 vezes {
+					tras(60)
+					esperar(100)
+					tras(60)
+					esperar(100)
+				}
+			}
+				
+		} 
+		se (sensorCor4 == "VERDE") entao {
+			se (sensorCor2 == "VERDE") entao {
+				repita 4 vezes {
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+					frente(100)
+					esperar(50)
+				}
+				repita 4 vezes {
+					tras(80)
+					esperar(100)
+				}
+				rotacionar(120,180)
+				repita 8 vezes {
+					tras(60)
+					esperar(100)
+					tras(60)
+					esperar(100)
+				}
+			}
+			senao {
+				rotacionar(80,90)
+			}
+		}
+		senao {
+			se (sensorLuz2 <= 20) entao {
+				se (sensorLuz4 <= 20) entao {
+					frente(50)	
+				}
+				senao {
+					enquanto(sensorLuz1 <= 20) farei {
+						sensorLuz1 = luz(1)
+						direita(200)
+					}
+				}
+				direita(220)
+			}
+			senao {
+				frente(40)
+			}
+			se (sensorLuz4 <= 20) entao {
+				se (sensorLuz2 <= 20) entao {
+					frente(50)
+				}
+				senao {
+					enquanto(sensorLuz5 <= 20) farei {
+						sensorLuz5 = luz(1)
+						esquerda(200)
+					}
+				}
+				esquerda(220)
+			} 
+		}	
+	}
+fim
