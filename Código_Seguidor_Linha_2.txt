@@ -15,13 +15,12 @@ texto SensorCor5 = ""
 texto SensorCor6 = ""
 
 inicio
+levantar(4000)
 SensorFrontal1 = ultra(1)
 SensorFrontal2 = ultra(3)
 SensorLateral = ultra(2)
-levantar(1000)
-levantar(1000)
-esperar(2000)
-enquanto(SensorLateral > 18 e SensorFrontal2 > 26) farei {
+enquanto(SensorLateral > 18 e SensorFrontal2 > 26) farei 
+{
     SensorLateral = ultra(2)
     SensorFrontal2 = ultra(3)
     SensorLuz2 = luz(2)
