@@ -1,0 +1,118 @@
+numero SensorFrontal1 = 0
+numero SensorFrontal2 = 0
+numero SensorLateral = 0
+numero SensorLuz1 = 0
+numero SensorLuz2 = 0
+numero SensorLuz3 = 0
+numero SensorLuz4 = 0
+numero SensorLuz5 = 0
+numero SensorLuz6 = 0
+texto SensorCor1 = ""
+texto SensorCor2 = ""
+texto SensorCor3 = ""
+texto SensorCor4 = ""
+texto SensorCor5 = ""
+texto SensorCor6 = ""
+
+inicio
+levantar(4000)
+SensorFrontal1 = ultra(1)
+SensorFrontal2 = ultra(3)
+SensorLateral = ultra(2)
+enquanto(SensorLateral > 18 e SensorFrontal2 > 26) farei {
+    SensorLateral = ultra(2)
+    SensorFrontal2 = ultra(3)
+    SensorLuz2 = luz(2)
+    SensorCor2 = cor(2)
+    SensorLuz4 = luz(4)
+    SensorCor4 = cor(4)
+    escrevernumero(1, SensorLuz2)
+    escrevernumero(2, SensorLuz4)
+    se(SensorLuz2 < 50) entao {
+        se(SensorCor2 == "VERDE") entao {
+            tras(100)
+            esperar(150)
+            SensorLuz2 = luz(2)
+            se(SensorLuz2 > 50) entao {
+                frente(100)
+                esperar(150)
+                se(SensorCor4 == "VERDE") entao {
+                    #Giro de 180
+                    frente(150)
+                    esperar(500)
+                    rotacionar(300, 180)
+                }
+
+                senao {
+                    #Giro de 90 Direita
+                    frente(100)
+                    esperar(950)
+                    rotacionar(300, 90)
+                    tras(100)
+                    esperar(500)
+                }
+            } 
+            senao {
+                frente(100)
+                esperar(150)
+            }
+        }
+        senao {
+            direita(300)
+            esperar(150)
+            frente(5)
+            esperar(150)
+				direita(300)
+				esperar(400)
+        }
+    }
+    senao {
+        frente(40)
+    }
+    se(SensorLuz4 < 50) entao {
+        se(SensorCor4 == "VERDE") entao {
+            tras(100)
+            esperar(150)
+            SensorLuz4 = luz(4)
+            se(SensorLuz4 > 50) entao {
+                frente(150)
+                esperar(150)
+                se(SensorCor2 == "VERDE") entao {
+                    frente(100)
+                    esperar(500)
+                    rotacionar(300, 180)
+                }
+                senao {
+                    #Giro de 90 Esquerda
+                    frente(100)
+                    esperar(950)
+                    rotacionar(300, negativo(90))
+                    tras(100)
+                    esperar(500)
+                }
+            }
+            senao {
+                frente(100)
+                esperar(150)
+            }
+            
+        }
+        senao {
+            esquerda(150)
+            esperar(150)
+            frente(5)
+            esperar(150)
+				esquerda(300)
+				esperar(400)
+		
+        }
+    }
+    senao {
+        frente(40)
+    }
+    SensorLuz2 = luz(2)
+    SensorCor2 = cor(2)
+    SensorLuz4 = luz(4)
+    SensorCor4 = cor(4)
+}
+fim
