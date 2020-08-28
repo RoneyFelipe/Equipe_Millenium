@@ -24,19 +24,19 @@ enquanto(SensorLateral > 18) farei {
     SensorFrontal1 = ultra(1)
     SensorFrontal2 = ultra(3)
     SensorLateral = ultra(2)
-    se (SensorFrontal2 < 16) entao {
+    se (SensorFrontal2 < 15) entao {
         escrever(1,"Cansei dessa vida")
         rotacionar(300,90)
-        frente(300)
-        esperar(500)
+        frente(350)
+        esperar(850)
         rotacionar(300,negativo(90))
         frente(300)
-        esperar(1300)
+        esperar(1400)
         rotacionar(300,negativo(90))
-        frente(300)
-        esperar(450)
+        frente(400)
+        esperar(900)
         rotacionar(300,90)
-        tras(100)
+        tras(80)
         esperar(200)
        SensorFrontal2 = ultra(3)
     }
@@ -52,7 +52,7 @@ enquanto(SensorLateral > 18) farei {
         SensorLuz5 = luz(5)
         escrevernumero(1, SensorLuz1)
         escrevernumero(2, SensorLuz5)
-        se(SensorLuz2 < 50 ou SensorLuz1 < 50) entao {
+        se(SensorLuz2 < 30 ou SensorLuz1 < 33) entao {
             se(SensorCor2 == "VERDE") entao {
                 tras(100)
                 esperar(150)
@@ -91,9 +91,9 @@ enquanto(SensorLateral > 18) farei {
             }
         }
         senao {
-            frente(40)
+            frente(50)
         }
-        se(SensorLuz4 < 50 ou SensorLuz5 < 50 ) entao {
+        se(SensorLuz4 < 30 ou SensorLuz5 < 33) entao {
             se(SensorCor4 == "VERDE") entao {
                 tras(100)
                 esperar(150)
@@ -132,14 +132,14 @@ enquanto(SensorLateral > 18) farei {
             }
         }
         senao {
-            frente(40)
+            frente(50)
         }
         SensorLuz1 = luz(1)
         SensorCor2 = cor(2)
-	    SensorLuz2 = luz(2)
+	SensorLuz2 = luz(2)
         SensorLuz3 = luz(3)
         SensorCor4 = cor(4)
-	    SensorLuz4 = luz(4)
+	SensorLuz4 = luz(4)
         SensorLuz5 = luz(5)
     }
 }
