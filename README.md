@@ -8,7 +8,9 @@ Arquivos da Equipe de robótica, denominada Millenium, do Instituto Federal de M
 
 # Problemas a serem resolvidos 
     Obstáculo {
-        O robô possui dificuldade em contornar o obstáculo caso o veja de maneira torta (Como por exemplo após uma curva de 90°), dessa forma não conseguindo retorna a linha pois à ultrapassa no retorno. 
+        O robô possui dificuldade em contornar o obstáculo caso o veja de maneira torta (Como por exemplo após uma curva de 90°), dessa forma não conseguindo retorna a linha pois à ultrapassa no retorno. 7
+
+        Problemas no obstáculo parcialmente resolvidos. Devemos realizar mais testes para termos certeza.
     }
 
     Rampa {
