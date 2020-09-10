@@ -25,6 +25,7 @@ enquanto(SensorLateral > 18) farei {
     SensorFrontal2 = ultra(3)
     SensorLateral = ultra(2)
     se (SensorFrontal2 < 7) entao {
+	acenderled("VERMELHO")
         escrever(1,"Cansei dessa vida")
         rotacionar(300,90)
         frenterotacao(100,25)
@@ -37,6 +38,7 @@ enquanto(SensorLateral > 18) farei {
        SensorFrontal2 = ultra(3)
     }
     senao {
+	acenderled("VERDE")
         SensorLateral = ultra(2)
         SensorFrontal2 = ultra(3)
         SensorLuz1 = luz(1)
@@ -99,7 +101,7 @@ enquanto(SensorLateral > 18) farei {
                     }
                     senao {
                         #Giro de 90 Esquerda
-                       frenterotacao(100,5)
+                       frenterotacao(100,15)
                         rotacionar(300, negativo(90))
                         trasrotacao(100,9)
                     }
