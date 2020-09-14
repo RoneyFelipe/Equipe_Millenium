@@ -1,0 +1,85 @@
+inicio
+levantar(4000)
+
+enquanto(ultra(2) > 18) farei {
+    se (ultra(3) < 7) entao {
+	    acenderled("VERMELHO")
+        escrever(1,"Cansei dessa vida")
+        rotacionar(300,90)
+        frenterotacao(100,25)
+        rotacionar(300,negativo(90))
+        frenterotacao(100,48)
+        rotacionar(300,negativo(90))
+        frenterotacao(100,24)
+        rotacionar(300,90)
+        trasrotacao(100,2)
+       
+    }
+    senao {
+	    acenderled("VERDE")
+        escrevernumero(1, luz(2))
+        escrevernumero(2, luz(4))
+        se(luz(2) < 60 ou luz(1) < 30) entao {
+            se(cor(2) == "VERDE") entao {
+	            escrever(1,"ACHEI O VERDE")
+                trasrotacao(100,3)
+                se(luz(2) >= 40) entao {
+                    frenterotacao(100,5)
+                    se(cor(4) == "VERDE") entao {
+                        #Giro de 180
+                        frenterotacao(100,5)
+                        rotacionar(300, 180)
+                    }
+                    senao {
+                        #Giro de 90 Direita
+                        frenterotacao(100,15)
+                        rotacionar(300, 90)
+                        trasrotacao(100,9)
+                    }
+                } 
+                senao {
+                    frenterotacao(100,6)
+                    
+                }
+            }
+            senao {
+                mover(negativo(60),40)
+                
+            }
+        }
+        senao {
+            frente(90)
+        }
+        se(luz(4) < 60 ou luz(5) < 30) entao {
+            se(cor(4) == "VERDE") entao {
+                trasrotacao(100,3)
+                se(luz(4) >= 40) entao {
+                    frenterotacao(100,5)
+                    se(cor(2) == "VERDE") entao {
+                        frente(100)
+                        esperar(500)
+                        rotacionar(300, 180)
+                    }
+                    senao {
+                        #Giro de 90 Esquerda
+                        frenterotacao(100,15)
+                        rotacionar(300, negativo(90))
+                        trasrotacao(100,9)
+                    }
+                }
+                senao {
+                    frenterotacao(100,6)
+                    
+                }
+                
+            }
+            senao {
+                mover(40,negativo(60))
+            }
+        }
+        senao {
+            frente(90)
+        }
+    }
+}
+fim
