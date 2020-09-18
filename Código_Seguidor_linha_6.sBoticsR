@@ -10,7 +10,7 @@ enquanto(ultra(2) > 18) farei {
         rotacionar(300,negativo(90))
         frenterotacao(100,48)
         rotacionar(300,negativo(90))
-        frenterotacao(100,24)
+        frenterotacao(100,25)
         rotacionar(300,90)
         trasrotacao(100,2)
        
@@ -19,7 +19,7 @@ enquanto(ultra(2) > 18) farei {
 	    acenderled("VERDE")
         escrevernumero(1, luz(2))
         escrevernumero(2, luz(4))
-        se(luz(2) < 60 ou luz(1) < 30) entao {
+        enquanto(luz(2) < 45 ou luz(1) < 30) farei {
             se(cor(2) == "VERDE") entao {
 	            escrever(1,"ACHEI O VERDE")
                 trasrotacao(100,3)
@@ -34,23 +34,25 @@ enquanto(ultra(2) > 18) farei {
                         #Giro de 90 Direita
                         frenterotacao(100,15)
                         rotacionar(300, 90)
-                        trasrotacao(100,9)
+                        trasrotacao(100,10)
                     }
                 } 
                 senao {
-                    frenterotacao(100,6)
-                    
+                    frenterotacao(100,6)  
                 }
             }
             senao {
-                mover(negativo(60),40)
+                direita(300)
+                esperar(300)
+                frente(5)
+                esperar(150)
                 
             }
         }
-        senao {
-            frente(90)
-        }
-        se(luz(4) < 60 ou luz(5) < 30) entao {
+        #senao {
+            #frente(40)
+        #}
+        enquanto(luz(4) < 45 ou luz(5) < 30) farei {
             se(cor(4) == "VERDE") entao {
                 trasrotacao(100,3)
                 se(luz(4) >= 40) entao {
@@ -64,22 +66,37 @@ enquanto(ultra(2) > 18) farei {
                         #Giro de 90 Esquerda
                         frenterotacao(100,15)
                         rotacionar(300, negativo(90))
-                        trasrotacao(100,9)
+                        trasrotacao(100,10)
                     }
                 }
                 senao {
                     frenterotacao(100,6)
-                    
                 }
-                
             }
             senao {
-                mover(40,negativo(60))
+                esquerda(300)
+                esperar(300)
+                frente(5)
+                esperar(150)  
             }
         }
-        senao {
-            frente(90)
-        }
+        #senao {
+            #frente(40)
+        #}
+        frente(80)
     }
+}
+
+parar()
+baixar(3000)
+
+enquanto(ultra(2) < 18) farei {    
+    enquanto(luz(2) < 45 ou luz(1) < 30) farei {
+        direita(300)
+    }
+    enquanto(luz(4) < 45 ou luz(5) < 30) farei {
+        esquerda(300)
+    }
+    frente(80)
 }
 fim
