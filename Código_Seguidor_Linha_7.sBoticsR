@@ -1,0 +1,106 @@
+inicio
+levantar(4000)
+
+enquanto(ultra(2) > 18) farei {
+    se (ultra(3) < 7) entao {
+	    acenderled("VERMELHO")
+        escrever(1,"Cansei dessa vida")
+        rotacionar(300,90)
+        frenterotacao(100,25)
+        rotacionar(300,negativo(90))
+        frenterotacao(100,48)
+        rotacionar(300,negativo(90))
+        frenterotacao(100,25)
+        rotacionar(300,90)
+        trasrotacao(100,2)
+       
+    }
+    senao {
+	    acenderled("AZUL")
+        escrevernumero(1, luz(2))
+        escrevernumero(2, luz(4))
+        enquanto(luz(2) < 45 ou luz(1) < 30) farei {
+            se(luz(4) < 45 ou luz(5) < 30) entao {
+                frenterotacao(100,2)
+            }
+            se(cor(2) == "VERDE") entao {
+	            escrever(1,"ACHEI O VERDE")
+                acenderled("VERDE")
+                trasrotacao(100,3)
+                se(luz(2) >= 45) entao {
+                    frenterotacao(100,5)
+                    se(cor(4) == "VERDE") entao {
+                        #Giro de 180
+                        frenterotacao(100,5)
+                        rotacionar(300, 180)
+                    }
+                    senao {
+                        #Giro de 90 Direita
+                        frenterotacao(100,15)
+                        rotacionar(300, 90)
+                        trasrotacao(100,10)
+                    }
+                } 
+                senao {
+                    frenterotacao(100,6)  
+                }
+            }
+            senao {
+                direita(300)
+                esperar(420)
+                frente(7)
+                esperar(210)
+                
+            }
+        }
+        enquanto(luz(4) < 45 ou luz(5) < 30) farei {
+            se(luz(2) < 45 ou luz(1) < 30) entao {
+                frenterotacao(100,2)
+            }
+            se(cor(4) == "VERDE") entao {
+                trasrotacao(100,3)
+                se(luz(4) >= 45) entao {
+                    escrever(1,"ACHEI O VERDE")
+                    acenderled("VERDE")
+                    frenterotacao(100,5)
+                    se(cor(2) == "VERDE") entao {
+                        frente(100)
+                        esperar(500)
+                        rotacionar(300, 180)
+                    }
+                    senao {
+                        #Giro de 90 Esquerda
+                        frenterotacao(100,15)
+                        rotacionar(300, negativo(90))
+                        trasrotacao(100,10)
+                    }
+                }
+                senao {
+                    frenterotacao(100,6)
+                }
+            }
+            senao {
+                esquerda(300)
+                esperar(420)
+                frente(7)
+                esperar(210)  
+            }
+        }
+        frente(120)
+    }
+}
+
+parar()
+baixar(3000)
+
+enquanto(ultra(2) < 18) farei {    
+    acenderled("AMARELO")
+    enquanto(luz(2) < 45 ou luz(1) < 30) farei {
+        direita(300)
+    }
+    enquanto(luz(4) < 45 ou luz(5) < 30) farei {
+        esquerda(300)
+    }
+    frente(280)
+}
+fim
