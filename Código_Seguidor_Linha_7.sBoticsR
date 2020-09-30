@@ -1,3 +1,5 @@
+texto arena = ""
+texto cont = ""
 inicio
 levantar(4000)
 
@@ -20,9 +22,7 @@ enquanto(ultra(2) > 18) farei {
         escrevernumero(1, luz(2))
         escrevernumero(2, luz(4))
         enquanto(luz(2) < 45 ou luz(1) < 30) farei {
-            se(luz(4) < 45 ou luz(5) < 30) entao {
-                frenterotacao(100,2)
-            }
+            
             se(cor(2) == "VERDE") entao {
 	            escrever(1,"ACHEI O VERDE")
                 acenderled("VERDE")
@@ -54,9 +54,7 @@ enquanto(ultra(2) > 18) farei {
             }
         }
         enquanto(luz(4) < 45 ou luz(5) < 30) farei {
-            se(luz(2) < 45 ou luz(1) < 30) entao {
-                frenterotacao(100,2)
-            }
+            
             se(cor(4) == "VERDE") entao {
                 trasrotacao(100,3)
                 se(luz(4) >= 45) entao {
@@ -93,7 +91,7 @@ enquanto(ultra(2) > 18) farei {
 parar()
 baixar(3000)
 
-enquanto(ultra(2) < 18) farei {    
+enquanto(ultra(2) < 20) farei {    
     acenderled("AMARELO")
     enquanto(luz(2) < 45 ou luz(1) < 30) farei {
         direita(300)
@@ -103,4 +101,49 @@ enquanto(ultra(2) < 18) farei {
     }
     frente(280)
 }
+
+parar()
+levantar(4000)
+
+ acenderled("VERMELHO")
+    parar()
+    frenterotacao(300,8)
+    rotacionar(300,90)
+    trasrotacao(300,2)
+    arena = "ENCONTRAR_TRIANGULO"
+
+    #Buscando o Triangulo
+    enquanto(arena == "ENCONTRAR_TRIANGULO" ) farei{
+        se (cont == "") entao {
+            baixar(4000)
+            frenterotacao(300,55)
+            levantar(4000)
+            cont = "Primeiro_Lado"
+        }
+
+        senao {
+            baixar(4000)
+            frenterotacao(300,80)
+            levantar(4000)
+            cont = "Segundo_Lado"
+        }
+        se(ultra(3) < 50) entao {
+            escrever(1, cont)
+            arena = "oi"
+        }
+
+        senao {
+            se (cont == "Segundo_Lado") entao {
+                cont = "Terceiro_Lado"
+                arena = "ENCONTREI"
+                escrever(1, cont)
+            }
+            se(cont != "Terceiro_Lado") entao {
+                baixar(4000)
+                frenterotacao(300,50)
+                rotacionar(300,negativo(90))
+            } 
+        }
+    }
+
 fim
