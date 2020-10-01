@@ -116,6 +116,7 @@ levantar(4000)
     enquanto(arena == "ENCONTRAR_TRIANGULO" ) farei{
         se (cont == "") entao {
             baixar(4000)
+            girarbaixo(1000)
             frenterotacao(300,55)
             levantar(4000)
             cont = "Primeiro_Lado"
@@ -127,9 +128,9 @@ levantar(4000)
             levantar(4000)
             cont = "Segundo_Lado"
         }
-        se(ultra(3) < 50) entao {
+        se(ultra(3) < 55) entao {
             escrever(1, cont)
-            arena = "oi"
+            arena = "ENCONTREI"
         }
 
         senao {
@@ -146,4 +147,17 @@ levantar(4000)
         }
     }
 
+    enquanto(arena == "ENCONTREI") farei {
+        escrever(1, "Estou aquii Demonio")
+        baixar(4000)
+        rotacionar(300,negativo(90))
+        frenterotacao(300,60)
+        se (cont == "Primeiro_Lado") entao {
+            rotacionar(300,negativo(90))
+            frenterotacao(300,45)
+        }
+        se (temvitima()) entao {
+
+        } 
+    }
 fim
