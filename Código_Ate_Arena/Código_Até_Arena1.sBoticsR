@@ -1,27 +1,30 @@
 texto arena = ""
 texto cont = ""
 inicio
-levantar(4000)
+levantar(3000)
+girarbaixo(1000)
 
-enquanto(ultra(2) > 18) farei {
-    se (ultra(3) < 7) entao {
-	    acenderled("VERMELHO")
-        escrever(1,"Cansei dessa vida")
-        rotacionar(300,90)
-        frenterotacao(100,25)
-        rotacionar(300,negativo(90))
-        frenterotacao(100,48)
-        rotacionar(300,negativo(90))
-        frenterotacao(100,25)
-        rotacionar(300,90)
-        trasrotacao(100,2)
-       
+enquanto(ultra(2) > 18 ou inclinacao() != 340) farei {
+    se (ultra(2) < 7 e inclinacao() == 0) entao {
+        levantar(1000)
+        se(ultra(1) > 70) entao {
+            acenderled("VERMELHO")
+            escrever(1,"Cansei dessa vida")
+            rotacionar(300,90)
+            frenterotacao(100,25)
+            rotacionar(300,negativo(90))
+            frenterotacao(100,48)
+            rotacionar(300,negativo(90))
+            frenterotacao(100,27)
+            rotacionar(300,90)
+            trasrotacao(100,2)
+        }
     }
     senao {
 	    acenderled("AZUL")
         escrevernumero(1, luz(2))
-        escrevernumero(2, luz(4))
-        enquanto(luz(2) < 45 ou luz(1) < 30) farei {
+        escrevernumero(2, ultra(2))
+        enquanto(luz(2) < 50 ou luz(1) < 35) farei {
             
             se(cor(2) == "VERDE") entao {
 	            escrever(1,"ACHEI O VERDE")
@@ -48,12 +51,14 @@ enquanto(ultra(2) > 18) farei {
             senao {
                 direita(300)
                 esperar(420)
-                frente(7)
+                direita(300)
+                esperar(300)
+                frente(10)
                 esperar(210)
                 
             }
         }
-        enquanto(luz(4) < 45 ou luz(5) < 30) farei {
+        enquanto(luz(4) < 50 ou luz(5) < 35) farei {
             
             se(cor(4) == "VERDE") entao {
                 trasrotacao(100,3)
@@ -80,16 +85,20 @@ enquanto(ultra(2) > 18) farei {
             senao {
                 esquerda(300)
                 esperar(420)
-                frente(7)
+                esquerda(300)
+                esperar(300)
+                frente(10)
                 esperar(210)  
             }
         }
-        frente(120)
+        frente(110)
     }
 }
 
+
+escrevernumero(2, ultra(2))
 parar()
-baixar(3000)
+baixar(2000)
 
 enquanto(ultra(2) < 20) farei {    
     acenderled("AMARELO")
@@ -104,19 +113,20 @@ enquanto(ultra(2) < 20) farei {
 
 parar()
 levantar(4000)
+girarcima(1000)
 
  acenderled("VERMELHO")
     parar()
     frenterotacao(300,8)
     rotacionar(300,90)
-    trasrotacao(300,2)
+    trasrotacao(300,4)
     arena = "ENCONTRAR_TRIANGULO"
 
     #Buscando o Triangulo
     enquanto(arena == "ENCONTRAR_TRIANGULO" ) farei{
         se (cont == "") entao {
             baixar(4000)
-            girarbaixo(1000)
+           
             frenterotacao(300,55)
             levantar(4000)
             cont = "Primeiro_Lado"
