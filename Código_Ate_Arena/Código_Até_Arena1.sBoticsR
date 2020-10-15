@@ -3,8 +3,74 @@ texto cont = ""
 inicio
 levantar(3000)
 girarbaixo(1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"DO",1000)
+tocar(1,"LA",1000)
+tocar(1,"FA",1000)
+tocar(1,"DA",1000)
+tocar(1,"MI",1000)
+tocar(1,"MI",1000)
+tocar(1,"MI",1000)
+tocar(1,"FA",1000)
+tocar(1,"DO",1000)
+tocar(1,"SOL",1000)
+tocar(1,"FA",1000)
+tocar(1,"DO",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"SOL",1000)
+tocar(1,"SOL",1000)
+tocar(1,"FA",1000)
+tocar(1,"FA",1000)
+tocar(1,"FA",1000)
+tocar(1,"LA",1000)
+tocar(1,"RE",1000)
+tocar(1,"RE",1000)
+tocar(1,"DO",1000)
+tocar(1,"DO",1000)
+tocar(1,"SI",1000)
+tocar(1,"DO",1000)
+tocar(1,"FA",1000)
+tocar(1,"SOL",1000)
+tocar(1,"FA",1000)
+tocar(1,"SOL",1000)
+tocar(1,"DO",1000)
+tocar(1,"SOL",1000)
+tocar(1,"DO",1000)
+tocar(1,"MI",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"LA",1000)
+tocar(1,"SOL",1000)
+tocar(1,"SOL",1000)
+tocar(1,"FA",1000)
+tocar(1,"FA",1000)
+tocar(1,"FA",1000)
+tocar(1,"LA",1000)
+tocar(1,"RE",1000)
+tocar(1,"RE",1000)
+tocar(1,"DO",1000)
+tocar(1,"DO",1000)
+tocar(1,"SI",1000)
+tocar(1,"DO",1000)
+tocar(1,"FA",1000)
+tocar(1,"SOL",1000)
+tocar(1,"FA",1000)
+tocar(1,"DO",1000)
+tocar(1,"LA",1000)
+tocar(1,"FA",1000)
+tocar(1,"DO",1000)
+tocar(1,"LA",1000)
 
-enquanto(ultra(2) > 18 ou inclinacao() != 340) farei {
+
+enquanto(ultra(2) > 18 ou inclinacao() != 340.02) farei {
     se (ultra(2) < 7 e inclinacao() == 0) entao {
         levantar(1000)
         se(ultra(1) > 70) entao {
@@ -25,7 +91,10 @@ enquanto(ultra(2) > 18 ou inclinacao() != 340) farei {
         escrevernumero(1, luz(2))
         escrevernumero(2, ultra(2))
         enquanto(luz(2) < 50 ou luz(1) < 35) farei {
-            
+            se (luz(1) < 10 e luz(2) < 10 e luz(3) < 10 e luz(4) < 10 e luz(5) < 10) entao {
+                frenterotacao(100,10)
+                escrever(1,"Aqui estou mais uma vez")
+            }
             se(cor(2) == "VERDE") entao {
 	            escrever(1,"ACHEI O VERDE")
                 acenderled("VERDE")
@@ -59,7 +128,10 @@ enquanto(ultra(2) > 18 ou inclinacao() != 340) farei {
             }
         }
         enquanto(luz(4) < 50 ou luz(5) < 35) farei {
-            
+            se (luz(1) < 10 e luz(2) < 10 e luz(3) < 10 e luz(4) < 10 e luz(5) < 10) entao {
+                frenterotacao(100,10)
+                escrever(1,"Aqui estou mais uma vez")
+            }
             se(cor(4) == "VERDE") entao {
                 trasrotacao(100,3)
                 se(luz(4) >= 45) entao {
